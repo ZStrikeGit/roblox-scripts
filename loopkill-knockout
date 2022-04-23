@@ -1,0 +1,13 @@
+
+Players = game:GetService("Players")
+coroutine.wrap(function()
+    while true do
+
+        for i, player in pairs(Players:GetPlayers()) do
+    if player.Name ~= Players.LocalPlayer.Name then
+        game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA("Tool").DamageRemote:FireServer(player.Character:FindFirstChild("Humanoid"))
+    end
+end
+        wait(0.001)
+    end
+end)()
